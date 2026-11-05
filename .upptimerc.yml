@@ -1,31 +1,34 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Upptime configuration for the public status page (repo cronpulser/status).
+# Copy this file's content into .upptimerc.yml in that repo, replacing the
+# template's file. Checks run every 5 minutes on GitHub Actions; a site is
+# "down" when it does not answer 200. The API check uses /health, which
+# returns 503 when the scheduler, queue, workers or database are unhealthy.
+owner: cronpulser
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Scheduler and API
+    url: https://api.cronpulser.com/health
+  - name: App
+    url: https://app.cronpulser.com/
+  - name: Website
+    url: https://cronpulser.com/
+
+assignees:
+  - cronpulser
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.cronpulser.com
+  logoUrl: https://cronpulser.com/favicon.svg
+  name: CronPulser Status
+  introTitle: "CronPulser service status"
+  introMessage: >-
+    Live status and uptime history of the CronPulser scheduler, app and
+    website. Checked every 5 minutes from GitHub, outside our own servers.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: CronPulser
+      href: https://cronpulser.com/
+    - title: Help
+      href: https://app.cronpulser.com/?support=1
